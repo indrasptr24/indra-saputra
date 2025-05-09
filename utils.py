@@ -6,9 +6,10 @@ import gdown
 
 def load_hama_model():
     model_path = "model/model_hama.h5"
+    
     os.makedirs("model", exist_ok=True)
-        url = "https://drive.google.com/uc?id=1ahp6x3MDsBLz_M0vcRi6uq64XYlNb_TL" 
-        gdown.download(url, model_path, quiet=False)
+    url = "https://drive.google.com/uc?id=1ahp6x3MDsBLz_M0vcRi6uq64XYlNb_TL" 
+    gdown.download(url, model_path, quiet=False)
     return load_model(model_path)
 
 def predict_hama(img_path, model, class_names):
