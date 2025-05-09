@@ -20,7 +20,8 @@ st.write("Upload gambar hama dan dapatkan hasil klasifikasinya.")
 uploaded_file = st.file_uploader("Pilih gambar...", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
-    # Simpan gambar sementara
+    os.makedirs("images", exist_ok=True)
+    
     img_path = os.path.join("images", uploaded_file.name)
     with open(img_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
