@@ -10,6 +10,11 @@ def load_hama_model():
     os.makedirs("model", exist_ok=True)
     url = "https://drive.google.com/uc?id=1ahp6x3MDsBLz_M0vcRi6uq64XYlNb_TL" 
     gdown.download(url, model_path, quiet=False)
+
+    if not os.path.exists(model_path):
+        print("File model tidak ditemukan setelah diunduh!")
+    else:
+        print("File model berhasil diunduh.")
     return load_model(model_path)
 
 def predict_hama(img_path, model, class_names):
