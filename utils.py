@@ -8,7 +8,7 @@ import gdown
 def load_hama_model():
     model_path = "model/model_hama.h5"
     os.makedirs("model", exist_ok=True)
-    url = "https://drive.google.com/uc?id=1ahp6x3MDsBLz_M0vcRi6uq64XYlNb_TL"
+    url = "https://drive.google.com/uc?id=122a30Bsz7XPGPz68KbNAsVVcR0Xat4D2"
     gdown.download(url, model_path, quiet=False)
 
     if not os.path.exists(model_path):
